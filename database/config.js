@@ -1,11 +1,10 @@
 const mongoose = require("mongoose");
 
-
 const dbConnection = async () => {
   try {
-    console.log(process.env.DB_CONNECTION);
-    console.log(`JWT ${process.env.PRIVATE_KEY_JWT}`);
-    await mongoose.connect(process.env.DB_CONNECTION);
+    await mongoose.connect(
+      "mongodb+srv://jorge-alcazar:jdar110700.@chat-server.agmhz.mongodb.net/mern-calendar"
+    );
 
     console.log("DB ONLINE");
   } catch (error) {
