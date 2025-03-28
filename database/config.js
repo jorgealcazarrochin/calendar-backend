@@ -3,6 +3,7 @@ require("dotenv").config();
 
 const dbConnection = async () => {
   try {
+    console.log(process.env.DB_CONNECTION);
     await mongoose.connect(process.env.DB_CONNECTION);
 
     console.log("DB ONLINE");
