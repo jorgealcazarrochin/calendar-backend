@@ -6,6 +6,8 @@ if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
 
+console.log("🔍 process.env:", Object.keys(process.env));
+
 // * Crear el servidor de express
 
 const app = express();

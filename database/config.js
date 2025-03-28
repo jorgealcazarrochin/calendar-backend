@@ -2,9 +2,7 @@ const mongoose = require("mongoose");
 
 const dbConnection = async () => {
   try {
-    await mongoose.connect(
-      "mongodb+srv://jorge-alcazar:jdar110700.@chat-server.agmhz.mongodb.net/mern-calendar"
-    );
+    await mongoose.connect(process.env.DB_CONNECTION);
 
     console.log("DB ONLINE");
   } catch (error) {
