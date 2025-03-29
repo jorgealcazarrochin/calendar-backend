@@ -21,7 +21,10 @@ router.post(
   [
     check("name", "El nombre es obligatorio").notEmpty(),
     check("email", "No tiene formato de email").isEmail(),
-    check("password", "El nombre es obligatorio").isLength({ min: 6 }),
+    check(
+      "password",
+      "La contraseña debe ser mínimo de 6 caracteres "
+    ).isLength({ min: 6 }),
     validarCampos,
   ],
   crearUsuario

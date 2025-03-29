@@ -6,9 +6,10 @@ const validarCampos = (req, resp = response, next) => {
   const errors = validationResult(req);
 
   if (!errors.isEmpty()) {
+    const firstError = errors.array()[0];
     return resp.status(400).json({
       ok: false,
-      errors: errors.mapped(),
+      msg: firstError.msg,
     });
   }
 
